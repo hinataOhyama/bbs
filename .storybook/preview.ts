@@ -1,4 +1,6 @@
 import type { Preview } from "@storybook/react";
+import "@/app/globals.css";
+import { withThemeByClassName } from "@storybook/addon-styling";
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +11,11 @@ const preview: Preview = {
       },
     },
   },
+
+  decorators: [
+    // Adds theme switching support.
+    // NOTE: requires setting "darkMode" to "class" in your tailwind config.
+  ],
 };
 
 export default preview;
